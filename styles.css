@@ -1,4 +1,3 @@
-
 /* CSS Reset and Base Styles */
 * {
     margin: 0;
@@ -231,6 +230,27 @@ header {
     font-size: 1rem;
 }
 
+/* Section Images */
+.section-image {
+    width: 100%;
+    height: 200px;
+    margin: 1rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.section-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.section-image:hover img {
+    transform: scale(1.05);
+}
+
 /* Special Sections */
 .kids-corner {
     background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
@@ -301,16 +321,6 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-10px);}
-    60% {transform: translateY(-5px);}
-}
-
-.bounce {
-    animation: bounce 2s infinite;
-}
-
 /* Responsive adjustments */
 @media (min-width: 768px) {
     .container {
@@ -324,5 +334,19 @@ footer {
     
     h2 {
         font-size: 2.2rem;
+    }
+    
+    .section-image {
+        height: 250px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 900px;
+    }
+    
+    .section-image {
+        height: 300px;
     }
 }
