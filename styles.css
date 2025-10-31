@@ -1,0 +1,328 @@
+
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #fff9f0;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Comic Neue', cursive;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #ff6b35;
+    text-shadow: 2px 2px 0px #ffd166;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px dashed #ff9e6d;
+    color: #ff6b35;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Layout */
+.container {
+    max-width: 100%;
+    padding: 1rem;
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(135deg, #ff9e6d 0%, #ff6b35 100%);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="20" cy="20" r="8" fill="%23ffd166" opacity="0.3"/><circle cx="80" cy="40" r="10" fill="%23ffd166" opacity="0.3"/><circle cx="60" cy="80" r="6" fill="%23ffd166" opacity="0.3"/><circle cx="40" cy="60" r="12" fill="%23ffd166" opacity="0.3"/></svg>');
+    z-index: 0;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.restaurant-name {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-style: italic;
+    color: #fff;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+}
+
+.menu-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.menu-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px dotted #ffd166;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.item-name {
+    font-size: 1.2rem;
+    color: #ff6b35;
+    flex: 1;
+}
+
+.item-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #06d6a0;
+    background-color: #e8faf4;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    margin-left: 0.5rem;
+}
+
+.item-description {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.kids-meal {
+    background-color: #f0f9ff;
+    border-left: 4px solid #4cc9f0;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.dietary-info {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.dietary-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    background-color: #e8e8e8;
+    color: #333;
+    font-weight: 600;
+}
+
+.dietary-tag.vegetarian {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+}
+
+.dietary-tag.gluten-free {
+    background-color: #ffecb3;
+    color: #ff8f00;
+}
+
+.dietary-tag.spicy {
+    background-color: #ffcdd2;
+    color: #c62828;
+}
+
+.dietary-tag.kids-favorite {
+    background-color: #e1bee7;
+    color: #7b1fa2;
+}
+
+/* Navigation */
+.category-nav {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 0.8rem 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 0 0 15px 15px;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.category-list {
+    display: flex;
+    list-style: none;
+    padding: 0 1rem;
+}
+
+.category-item {
+    margin-right: 1.2rem;
+}
+
+.category-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    padding: 0.5rem 0.8rem;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+}
+
+.category-link.active {
+    background-color: #ff6b35;
+    color: white;
+}
+
+.category-link i {
+    margin-right: 0.3rem;
+    font-size: 1rem;
+}
+
+/* Special Sections */
+.kids-corner {
+    background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.kids-corner::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 100px;
+    height: 100px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 A40,40 0 1,1 50,90 A40,40 0 1,1 50,10 Z" fill="%23ffffff" opacity="0.1"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.kids-corner h2 {
+    color: white;
+    border-bottom: 3px dashed rgba(255,255,255,0.5);
+}
+
+.kids-meal .item-name {
+    color: #4cc9f0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #ffd166;
+    margin-top: 2rem;
+    color: #333;
+    font-size: 0.9rem;
+    border-radius: 20px 20px 0 0;
+}
+
+.footer-logo {
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.8rem;
+    color: #ff6b35;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+}
