@@ -63,23 +63,3 @@ document.querySelectorAll('.menu-item').forEach(item => {
     item.style.opacity = '0';
     observer.observe(item);
 });
-
-// Add some fun animations to kids section
-const kidsSection = document.getElementById('kids');
-const kidsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const kidsMeals = document.querySelectorAll('.kids-meal');
-            kidsMeals.forEach((meal, index) => {
-                setTimeout(() => {
-                    meal.style.animation = 'bounce 0.5s ease';
-                    setTimeout(() => {
-                        meal.style.animation = '';
-                    }, 500);
-                }, index * 200);
-            });
-        }
-    });
-}, { threshold: 0.5 });
-
-kidsObserver.observe(kidsSection);
